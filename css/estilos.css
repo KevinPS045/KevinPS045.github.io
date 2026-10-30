@@ -1,0 +1,684 @@
+/* ==================================================
+   FUERZA Y HIERRO - ESTILOS GENERALES Y RESPONSIVE
+   ================================================== */
+
+/* VARIABLES */
+:root {
+    --color-bg: #101010;
+    --color-bg-dark: #080808;
+    --color-panel: #1b1b1b;
+    --color-panel-light: #222222;
+    --color-border: #303030;
+    --color-text: #f5f5f5;
+    --color-muted: #b8b8b8;
+    --color-accent: #e32636;
+    --container-width: 1180px;
+}
+
+/* REINICIO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+/* CONTENEDOR GENERAL DE SECCIONES */
+.section {
+    padding: 88px max(6%, calc((100% - var(--container-width)) / 2));
+}
+
+.section-heading {
+    max-width: 780px;
+    margin: 0 auto 38px;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    color: var(--color-accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    margin-bottom: 16px;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 600;
+    line-height: 1.15;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.section-title span,
+.site-footer h2 span {
+    color: var(--color-accent);
+}
+
+.subtitle {
+    max-width: 760px;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ==================================================
+   MENÚ DE NAVEGACIÓN
+   ================================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    width: 100%;
+    min-height: 86px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 10px max(5%, calc((100% - 1280px) / 2));
+    background: rgba(9, 9, 9, 0.97);
+    border-bottom: 1px solid #292929;
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(12px, 1.8vw, 25px);
+}
+
+.nav-menu a {
+    padding: 10px 0;
+    color: #dddddd;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus-visible {
+    color: var(--color-accent);
+}
+
+.menu-toggle {
+    display: none;
+    width: 46px;
+    height: 44px;
+    padding: 8px;
+    border: 1px solid #383838;
+    border-radius: 8px;
+    background: #151515;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 5px auto;
+    border-radius: 2px;
+    background: white;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==================================================
+   PORTADA
+   ================================================== */
+
+.hero {
+    position: relative;
+    display: flex;
+    min-height: 590px;
+    align-items: center;
+    padding: 80px max(7%, calc((100% - var(--container-width)) / 2));
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.72) 52%, rgba(0, 0, 0, 0.30) 100%),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85");
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 680px;
+}
+
+.hero-content .eyebrow {
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    margin: 16px 0 20px;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(56px, 8vw, 94px);
+    font-weight: 700;
+    line-height: 0.98;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: var(--color-accent);
+}
+
+.hero-description {
+    max-width: 590px;
+    margin-bottom: 30px;
+    color: #d0d0d0;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 24px;
+    border: 2px solid var(--color-accent);
+    border-radius: 4px;
+    background: var(--color-accent);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+    background: transparent;
+    color: white;
+}
+
+/* ==================================================
+   PROYECTO
+   ================================================== */
+
+.project {
+    background: #171717;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    min-width: 0;
+    padding: 28px;
+    border-left: 4px solid var(--color-accent);
+    border-radius: 4px;
+    background: var(--color-panel-light);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    background: #292929;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    font-family: "Oswald", sans-serif;
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.project-card p {
+    color: var(--color-muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ==================================================
+   INTEGRANTES
+   ================================================== */
+
+.team {
+    background: var(--color-bg);
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.member {
+    display: flex;
+    min-height: 105px;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 18px;
+    border-bottom: 3px solid var(--color-accent);
+    border-radius: 4px;
+    background: var(--color-panel);
+}
+
+.member h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+/* ==================================================
+   GENERALIDADES
+   ================================================== */
+
+.objectives {
+    background: #151515;
+}
+
+.objective-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.objective {
+    min-width: 0;
+    padding: 26px;
+    border: 1px solid #292929;
+    border-bottom: 3px solid var(--color-accent);
+    border-radius: 4px;
+    background: var(--color-panel);
+}
+
+.objective h3 {
+    margin-bottom: 13px;
+    color: var(--color-accent);
+    font-family: "Oswald", sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.objective p,
+.objective li {
+    color: #c2c2c2;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.objective p + p {
+    margin-top: 12px;
+}
+
+.objective ul {
+    margin: 10px 0 0 20px;
+    padding-left: 4px;
+}
+
+.objective li {
+    padding-left: 3px;
+    margin-bottom: 6px;
+}
+
+.objective strong {
+    color: #f1f1f1;
+}
+
+.objectives-intro {
+    margin-top: 14px !important;
+}
+
+/* Imágenes de diagramas: se adaptan al ancho de su tarjeta */
+.document-image {
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #101010;
+}
+
+.document-image img {
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* ==================================================
+   CRONOGRAMA / DESARROLLO
+   ================================================== */
+
+.development {
+    background: #171717;
+}
+
+.pert-image {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12px;
+    border: 1px solid #333333;
+    background: #101010;
+}
+
+/* ==================================================
+   PIE DE PÁGINA
+   ================================================== */
+
+.site-footer {
+    padding: 34px 20px;
+    border-top: 1px solid #292929;
+    background: var(--color-bg-dark);
+    text-align: center;
+}
+
+.site-footer h2 {
+    margin-bottom: 8px;
+    font-family: "Oswald", sans-serif;
+    font-size: 28px;
+}
+
+.site-footer p {
+    margin-top: 6px;
+    color: #858585;
+    font-size: 13px;
+}
+
+/* ==================================================
+   TABLETS
+   ================================================== */
+
+@media (max-width: 1000px) {
+    .site-header {
+        gap: 18px;
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .nav-menu {
+        gap: 13px;
+    }
+
+    .nav-menu a {
+        font-size: 11px;
+    }
+
+    .section {
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+}
+
+/* ==================================================
+   CELULARES
+   ================================================== */
+
+@media (max-width: 800px) {
+    html {
+        scroll-padding-top: 78px;
+    }
+
+    .site-header {
+        min-height: 70px;
+        padding: 7px 5%;
+    }
+
+    .logo img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .menu-toggle {
+        display: block;
+        flex: 0 0 auto;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 5% 14px;
+        border-bottom: 1px solid #333333;
+        background: #090909;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-menu a {
+        display: block;
+        width: 100%;
+        padding: 13px 10px;
+        border-bottom: 1px solid #242424;
+        font-size: 13px;
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: 0;
+    }
+
+    .section {
+        padding: 62px 6%;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-title {
+        font-size: clamp(28px, 7vw, 36px);
+    }
+
+    .subtitle {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 70px 7%;
+        background-position: 58% center;
+    }
+
+    .hero h1 {
+        font-size: clamp(54px, 13vw, 76px);
+    }
+
+    .hero-description {
+        max-width: 520px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .project-grid,
+    .objective-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project-card,
+    .objective {
+        padding: 22px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .member {
+        min-height: 96px;
+        padding: 18px 12px;
+    }
+
+    .member h3 {
+        font-size: 16px;
+    }
+
+    .objective p,
+    .objective li {
+        font-size: 14px;
+    }
+
+    .pert-image {
+        padding: 6px;
+    }
+}
+
+/* ==================================================
+   CELULARES PEQUEÑOS
+   ================================================== */
+
+@media (max-width: 480px) {
+    .site-header {
+        min-height: 64px;
+        padding: 6px 4%;
+    }
+
+    .logo img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 40px;
+    }
+
+    .hero {
+        min-height: 455px;
+        padding: 58px 6%;
+        background-position: 60% center;
+    }
+
+    .hero-content .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .hero h1 {
+        margin: 14px 0 17px;
+        font-size: clamp(48px, 14vw, 64px);
+    }
+
+    .hero-description {
+        margin-bottom: 24px;
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 52px 5%;
+    }
+
+    .section-title {
+        font-size: 29px;
+    }
+
+    .project-card,
+    .objective {
+        padding: 19px;
+    }
+
+    .project-card h3,
+    .objective h3 {
+        font-size: 19px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .member {
+        min-height: 72px;
+    }
+
+    .member h3 {
+        font-size: 16px;
+    }
+
+    .site-footer {
+        padding: 28px 16px;
+    }
+
+    .site-footer p {
+        font-size: 12px;
+    }
+}
+
+/* Accesibilidad: reduce animaciones si el dispositivo lo solicita */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
