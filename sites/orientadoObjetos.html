@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+    <meta name="description" content="Proyecto académico Fuerza y Hierro: análisis y diseño de un sistema de control de asistencia y pagos para un gimnasio.">
+    <title>Fuerza y Hierro | Orientado a Objetos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="site-header">
+        <a href="../index.html" class="logo" aria-label="Fuerza y Hierro, ir al inicio">
+            <img src="../Img/logo.png" alt="Logo Fuerza y Hierro">
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle"
+                type="button" aria-label="Abrir menú"
+                aria-expanded="false" aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
+            <a href="../index.html">Inicio</a>
+            <a href="analisisEstructurado.html">Análisis estructurado</a>
+            <a href="#">Orientado a objetos</a>
+            <a href="marcoTeorico.html">Marco teórico</a>
+            <a href="videos.html">Videos</a>
+            <a href="">Contáctanos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="objectives section" id="generalidades">
+            <div class="section-heading">
+                <p class="eyebrow">ORIENTADO A OBJETOS</p>
+                <h2 class="section-title">DIAGRAMA ORIENTADO A <span>OBJETOS</span></h2>
+                <figure class="document-image pert-image">
+                    <img src="../Img/DiagramaOO.jpeg"
+                         alt="Diagrama Orientado a Objetos Fuerza y Hierro"
+                         loading="lazy">
+                </figure>
+            </div>
+            <div class="section-heading">
+                <h2 class="section-title">DIAGRAMA DE CASOS DE USO DEL <span>SISTEMA</span></h2>
+                <p class="subtitle">
+                    En este apartado decidimos implementar al proyecto lo último avanzado en la materia
+                </p>
+                <figure class="document-image pert-image">
+                    <img src="../Img/DiagramaUsos.jpeg"
+                         alt="Diagrama de Casos de Uso Fuerza y Hierro"
+                         loading="lazy">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="contacto">
+        <h2>FUERZA <span>&amp;</span> HIERRO</h2>
+        <p>Proyecto académico | Sistema de control de asistencia y pagos</p>
+        <p>© 2026 Fuerza y Hierro. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
+
+        function closeMenu() {
+            navMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Abrir menú");
+        }
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navMenu.classList.toggle("active");
+
+            menuToggle.classList.toggle("active", isOpen);
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Cerrar menú" : "Abrir menú"
+            );
+        });
+
+        navMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        // Si se amplía la ventana a formato escritorio, el menú queda normalizado.
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 800) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+    <meta name="description" content="Proyecto académico Fuerza y Hierro: análisis y diseño de un sistema de control de asistencia y pagos para un gimnasio.">
+    <title>Fuerza y Hierro | Proyecto INF-241</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="site-header">
+        <a href="#inicio" class="logo" aria-label="Fuerza y Hierro, ir al inicio">
+            <img src="Img/logo.png" alt="Logo Fuerza y Hierro">
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle"
+                type="button" aria-label="Abrir menú"
+                aria-expanded="false" aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
+            <a href="">Inicio</a>
+            <a href="">Análisis estructurado</a>
+            <a href="">Orientado a objetos</a>
+            <a href="">Marco teórico</a>
+            <a href="">Videos</a>
+            <a href="">Contáctanos</a>
+        </nav>
+    </header>
+
+    <main>
+        
+    </main>
+
+
+        <!-- SERVICIOS DEL GIMNASIO -->
+        <section class="services section" id="servicios">
+            <div class="section-heading">
+                <h2 class="services-title">NUESTROS SERVICIOS</h2>
+                <span class="services-divider"></span>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <img src="Img/pesas.png" alt="Servicio de pesas" loading="lazy">
+                    <div class="service-content">
+                        <h3>PESAS</h3>
+                        <p>Contamos con una gran variedad de pesas de distintos kg.</p>
+                    </div>
+                    <div class="service-action"><a href="#contacto">regístrate</a></div>
+                </article>
+
+                <article class="service-card">
+                    <img src="Img/cardio.png" alt="Servicio de cardio" loading="lazy">
+                    <div class="service-content">
+                        <h3>CARDIO</h3>
+                        <p>Contamos con máquinas actualizadas para cualquier rutina de cardio.</p>
+                    </div>
+                    <div class="service-action"><a href="#contacto">regístrate</a></div>
+                </article>
+
+                <article class="service-card">
+                    <img src="Img/zumba.png" alt="Clases de zumba" loading="lazy">
+                    <div class="service-content">
+                        <h3>ZUMBA</h3>
+                        <p>Nuevas coreografías todos los días con instructores de la más alta calidad.</p>
+                    </div>
+                    <div class="service-action"><a href="#contacto">regístrate</a></div>
+                </article>
+
+                <article class="service-card">
+                    <img src="Img/cross.png" alt="Entrenamiento de crossfit" loading="lazy">
+                    <div class="service-content">
+                        <h3>CROSSFIT</h3>
+                        <p>Rutinas diarias con alta demanda por sus resultados efectivos.</p>
+                    </div>
+                    <div class="service-action"><a href="#contacto">regístrate</a></div>
+                </article>
+
+                <article class="service-card">
+                    <img src="Img/nutricion.png" alt="Servicio de nutrición" loading="lazy">
+                    <div class="service-content">
+                        <h3>NUTRICIÓN</h3>
+                        <p>Contamos con profesionales en el área de la salud que te guiarán a una dieta saludable.</p>
+                    </div>
+                    <div class="service-action"><a href="#contacto">regístrate</a></div>
+                </article>
+
+                <article class="service-card">
+                    <img src="Img/entre.png" alt="Entrenamiento personal" loading="lazy">
+                    <div class="service-content">
+                        <h3>ENTRENAMIENTO PERSONAL</h3>
+                        <p>Contamos con instructores de alta calidad, con experiencia, seguros y efectivos.</p>
+                    </div>
+                    <div class="service-action"><a href="#contacto">regístrate</a></div>
+                </article>
+            </div>
+        </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="contacto">
+        <h2>FUERZA <span>&amp;</span> HIERRO</h2>
+        <p>Proyecto académico | Sistema de control de asistencia y pagos</p>
+        <p>© 2026 Fuerza y Hierro. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
+
+        function closeMenu() {
+            navMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Abrir menú");
+        }
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navMenu.classList.toggle("active");
+
+            menuToggle.classList.toggle("active", isOpen);
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Cerrar menú" : "Abrir menú"
+            );
+        });
+
+        navMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        // Si se amplía la ventana a formato escritorio, el menú queda normalizado.
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 800) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>

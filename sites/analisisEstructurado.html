@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+    <meta name="description" content="Proyecto académico Fuerza y Hierro: análisis y diseño de un sistema de control de asistencia y pagos para un gimnasio.">
+    <title>Fuerza y Hierro | Analisis Estructurado</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="site-header">
+        <a href="../index.html" class="logo" aria-label="Fuerza y Hierro, ir al inicio">
+            <img src="../Img/logo.png" alt="Logo Fuerza y Hierro">
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle"
+                type="button" aria-label="Abrir menú"
+                aria-expanded="false" aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
+            <a href="../index.html">Inicio</a>
+            <a href="#">Análisis estructurado</a>
+            <a href="orientadoObjetos.html">Orientado a objetos</a>
+            <a href="marcoTeorico.html">Marco teórico</a>
+            <a href="videos.html">Videos</a>
+            <a href="">Contáctanos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="objectives section" id="generalidades">
+            <div class="section-heading">
+                <p class="eyebrow">MODELO AMBIENTAL</p>
+                <h2 class="section-title">DECLARACION DE <span>PROPOSITOS</span></h2>
+                <p class="subtitle">
+                    Realizar un Sistema de registro y gestión de miembros nuevos para el 
+                    gimnasio Fuerza y Hierro. Implementando la virtualidad de inscripción y 
+                    pagos garantizando una mayor eficacia en la gestión de membresías. 
+                    Además, se ofrece un seguimiento sobre la durabilidad de dichas 
+                    membresías y también mostrando información sobre las sucursales y 
+                    sus respectivos horarios.
+                </p>
+            </div>
+            <div class="section-heading">
+                <h2 class="section-title">DIAGRAMA DE <span>CONTEXTO</span></h2>
+                <figure class="document-image pert-image">
+                <img src="../Img/DiagramaContexto.jpeg"
+                     alt="Diagrama de Contexto Fuerza y Hierro"
+                     loading="lazy">
+            </figure>
+            </div>
+            <div class="section-heading">
+                <h2 class="section-title">LISTA DE <span>ACONTECIMIENTOS</span></h2>
+                <p class="subtitle">
+                    <ul>
+                        <li>Una persona podrá realizar la inscripción donde se le pedirán sus datos 
+                            como nombre completo ,número de carnet y correo electrónico. Con esos 
+                            datos será posible generar una nueva membresía y su respectiva tarjeta 
+                            de miembro.</li>
+                        <li>La persona cliente podrá escoger el plan de membresía o alguna promoción 
+                            si en caso existiese cuando efectúe la inscripción o renovación de 
+                            membresía.</li>
+                        <li>Se le enviará su respectivo informe de pago a la persona con la cantidad 
+                            y datos ingresados.</li>
+                        <li>El nuevo miembro del gimnasio tendrá la opción de elegir la forma de pago 
+                            ya sea por código QR generado ese mismo momento o por tarjeta de crédito.</li>
+                        <li>Para una persona no será necesario ser miembro del gimnasio para realizar 
+                            las compras de productos como suplementos o alimentos del lugar. Con el 
+                            sistema podrá pagarlos con los mismos métodos que escoja.</li>
+                        <li>Luego de efectuar la inscripción. El miembro tendrá derecho a una consulta 
+                            con una nutricionista de forma gratuita, tendrá la opción de agendar una 
+                            consulta de acuerdo al horario de disponibilidad. En caso de querer hacer 
+                            una re-consulta, ésta tendrá costo.</li>
+                        <li>El miembro tendrá acceso a todas las sucursales, por lo tanto podrá 
+                            consultar información de la sucursal que elija.</li>
+                        <li>La administración podrá registrar nuevos miembros usando los datos para 
+                            generar una nueva tarjeta de miembro. También podrá eliminar membresías 
+                            expiradas.</li>
+                        <li>La administración recibirá informe sobre las membresías activas para tener 
+                            un control sobre cuáles serán las próximas a expirar. También 
+                            recibirá informe de aquellos que expiraron y podrá mandar un 
+                            mensaje al e-mail del miembro informando sobre su expiración y 
+                            dando la opción de renovación.</li>
+                        <li>La administración recibirá informe sobre los ingresos resultantes de 
+                            los nuevos registros y renovaciones de membresías para tener un mejor 
+                            control económico y poder ver las posibilidades de una posible 
+                            promoción.</li>
+                        <li>La administración tendrá control sobre los instructores ya sean 
+                            los de entrenamiento o los que tienen una disciplina específica. 
+                            Podrá asignar a cada instructor a una respectiva sucursal y también 
+                            el horario.</li>
+                        <li>Un instructor podrá consultar su horario y por ende también 
+                            su sucursal donde tendrá que presentarse para trabajar.</li>
+                        <li>El instructor podrá verificar el pago de su trabajo, el sistema le 
+                            informará sobre el monto y también los detalles del depósito realizado 
+                            a su cuenta bancaria.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="section-heading">
+                <h2 class="section-title"><span>DESCRIPCION</span></h2>
+                <p class="subtitle">
+                    El Diagrama de Contexto presenta el sistema de registro y gestión de 
+                    miembros para el gimnasio Fuerza y Hierro como una caja negra que interactúa 
+                    con diferentes actores externos y sistemas.
+                    <br>
+                    <br>
+                    <p class="eyebrow">ACTORES EXTERNOS PRINCIPALES</p>
+                    <ul>
+                        <li>Miembros: Realizan inscripciones, renovaciones, consultas de membresía y acceso a sucursales</li>
+                        <li>Administradores: Gestionan miembros, membresías, instructores, reportes e información de sucursales</li>
+                        <li>Instructores: Consultan horarios, sucursales y validación de pagos</li>
+                        <li>Sistema de Pagos: Procesa transacciones por código QR y tarjeta de crédito</li>
+                        <li>Base de Datos de Sucursales: Almacena información de ubicaciones, horarios e instructores</li>
+                    </ul>
+                    <br>
+                    <p class="eyebrow">FLUJOS DE INFORMACIÓN PRINCIPAL</p>
+                    El sistema recibe solicitudes de inscripción, renovación y consulta de 
+                    miembros, procesa transacciones de pago, gestiona horarios de instructores 
+                    y mantiene reportes actualizados de membresías activas y expiraciones.
+                </p>
+            </div>
+        </section>
+        <section class="objectives section" id="generalidades">
+            <div class="section-heading">
+                <h2 class="section-title">MODELO DE <span>COMPORTAMIENTO</span></h2>
+            </div>
+            <div class="section-heading">
+                <h2 class="section-title">NIVEL 1</h2>
+            </div>
+            <div class="section-heading">
+                <figure class="document-image pert-image">
+                <img src="../Img/ModeloComportamientoN1.jpeg"
+                     alt="Diagrama de Contexto Fuerza y Hierro"
+                     loading="lazy">
+                </figure>
+            </div>
+            <br>
+            <div class="section-heading">
+                <h2 class="section-title">NIVEL 2</h2>
+            </div>
+            <div class="section-heading">
+                <figure class="document-image pert-image">
+                <img src="../Img/ModeloComportamientoN2-2.jpeg"
+                     alt="Diagrama de Contexto Fuerza y Hierro"
+                     loading="lazy">
+                </figure>
+                <figure class="document-image pert-image">
+                <img src="../Img/ModeloComportamientoN2.jpeg"
+                     alt="Diagrama de Contexto Fuerza y Hierro"
+                     loading="lazy">
+                </figure>
+            </div>
+            <br>
+            <div class="section-heading">
+                <h2 class="section-title">DESCRIPCION</h2>
+                <p class="subtitle">El modelo de comportamiento del sistema 
+                    Fuerza y Hierro se divide en múltiples niveles jerárquicos:</p>
+                    <br>
+                <h2 class="section-title">COMPONENTES PRINCIPALES</h2>
+                <ul>
+                    <li>Proceso de Inscripción: Captura de datos de miembros, validación y generación de membresías.</li>
+                    <li>Proceso de Pagos: Integración con pasarelas de pago QR y tarjeta de crédito.</li>
+                    <li>Proceso de Gestión de Horarios: Asignación de instructores a sucursales y franjas horarias.</li>
+                    <li>Proceso de Consultas: Validación de membresías, renovaciones y acceso a sucursales.</li>
+                    <li>Proceso de Reportes: Generación de informes para administración e instructores.</li>
+                </ul>
+                <h2 class="section-title">COMPONENTES PRINCIPALES</h2>
+                <ul>
+                    <li>Base de Datos de Miembros: Información personal, membresías activas y historial.</li>
+                    <li>Base de Datos de Pagos: Transacciones, métodos de pago y comprobantes.</li>
+                    <li>Base de Datos de Sucursales: Ubicaciones, horarios e instructores asignados.</li>
+                    <li>Base de Datos de Instructores: Datos laborales, especialidades y asignaciones.</li>
+                </ul>
+            </div>
+            
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="contacto">
+        <h2>FUERZA <span>&amp;</span> HIERRO</h2>
+        <p>Proyecto académico | Sistema de control de asistencia y pagos</p>
+        <p>© 2026 Fuerza y Hierro. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
+
+        function closeMenu() {
+            navMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Abrir menú");
+        }
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navMenu.classList.toggle("active");
+
+            menuToggle.classList.toggle("active", isOpen);
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Cerrar menú" : "Abrir menú"
+            );
+        });
+
+        navMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        // Si se amplía la ventana a formato escritorio, el menú queda normalizado.
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 800) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
