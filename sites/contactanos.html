@@ -10,14 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
     <!-- MENÚ DE NAVEGACIÓN -->
     <header class="site-header">
-        <a href="#inicio" class="logo" aria-label="Fuerza y Hierro, ir al inicio">
-            <img src="Img/logo.png" alt="Logo Fuerza y Hierro">
+        <a href="../index.html" class="logo" aria-label="Fuerza y Hierro, ir al inicio">
+            <img src="../Img/logo.png" alt="Logo Fuerza y Hierro">
         </a>
 
         <button class="menu-toggle" id="menu-toggle"
@@ -29,83 +29,52 @@
         </button>
 
         <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
-            <a href="">Inicio</a>
-            <a href="">Análisis estructurado</a>
-            <a href="">Orientado a objetos</a>
-            <a href="">Marco teórico</a>
-            <a href="">Videos</a>
-            <a href="">Contáctanos</a>
+            <a href="../index.html">Inicio</a>
+            <a href="analisisEstructurado.html">Análisis estructurado</a>
+            <a href="orientadoObjetos.html">Orientado a objetos</a>
+            <a href="marcoTeorico.html">Marco teórico</a>
+            <a href="videos.html">Videos</a>
+            <a href="#">Contáctanos</a>
         </nav>
     </header>
 
     <main>
-        
+        <section class="section contact">
+    <div class="contact-card">
+
+        <h2>CONTACTANOS</h2>
+
+        <form class="contact-form">
+
+            <input
+                type="text"
+                placeholder="Nombre"
+                name="nombre"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Correo electrónico"
+                name="correo"
+                required
+            >
+
+            <textarea
+                placeholder="Escribe tu mensaje..."
+                name="mensaje"
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">ENVIAR</button>
+
+        </form>
+
+    </div>
+</section>
     </main>
 
-
-        <!-- SERVICIOS DEL GIMNASIO -->
-        <section class="services section" id="servicios">
-            <div class="section-heading">
-                <h2 class="services-title">NUESTROS SERVICIOS</h2>
-                <span class="services-divider"></span>
-            </div>
-
-            <div class="services-grid">
-                <article class="service-card">
-                    <img src="Img/pesas.png" alt="Servicio de pesas" loading="lazy">
-                    <div class="service-content">
-                        <h3>PESAS</h3>
-                        <p>Contamos con una gran variedad de pesas de distintos kg.</p>
-                    </div>
-                    <div class="service-action"><a href="#contacto">regístrate</a></div>
-                </article>
-
-                <article class="service-card">
-                    <img src="Img/cardio.png" alt="Servicio de cardio" loading="lazy">
-                    <div class="service-content">
-                        <h3>CARDIO</h3>
-                        <p>Contamos con máquinas actualizadas para cualquier rutina de cardio.</p>
-                    </div>
-                    <div class="service-action"><a href="#contacto">regístrate</a></div>
-                </article>
-
-                <article class="service-card">
-                    <img src="Img/zumba.png" alt="Clases de zumba" loading="lazy">
-                    <div class="service-content">
-                        <h3>ZUMBA</h3>
-                        <p>Nuevas coreografías todos los días con instructores de la más alta calidad.</p>
-                    </div>
-                    <div class="service-action"><a href="#contacto">regístrate</a></div>
-                </article>
-
-                <article class="service-card">
-                    <img src="Img/cross.png" alt="Entrenamiento de crossfit" loading="lazy">
-                    <div class="service-content">
-                        <h3>CROSSFIT</h3>
-                        <p>Rutinas diarias con alta demanda por sus resultados efectivos.</p>
-                    </div>
-                    <div class="service-action"><a href="#contacto">regístrate</a></div>
-                </article>
-
-                <article class="service-card">
-                    <img src="Img/nutricion.png" alt="Servicio de nutrición" loading="lazy">
-                    <div class="service-content">
-                        <h3>NUTRICIÓN</h3>
-                        <p>Contamos con profesionales en el área de la salud que te guiarán a una dieta saludable.</p>
-                    </div>
-                    <div class="service-action"><a href="#contacto">regístrate</a></div>
-                </article>
-
-                <article class="service-card">
-                    <img src="Img/entre.png" alt="Entrenamiento personal" loading="lazy">
-                    <div class="service-content">
-                        <h3>ENTRENAMIENTO PERSONAL</h3>
-                        <p>Contamos con instructores de alta calidad, con experiencia, seguros y efectivos.</p>
-                    </div>
-                    <div class="service-action"><a href="#contacto">regístrate</a></div>
-                </article>
-            </div>
-        </section>
 
     <!-- PIE DE PÁGINA -->
     <footer class="site-footer" id="contacto">
